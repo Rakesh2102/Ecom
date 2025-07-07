@@ -13,7 +13,14 @@ app.use(express.json());
 app.use(cors());
 
 //Database connection with mongodb
-mongoose.connect("mongodb+srv://sushma:Sushma123@cluster0.74sese3.mongodb.net/e-com");
+import dotenv from "dotenv";
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 
 //API Creation
 app.get("/",(req,res)=>{
