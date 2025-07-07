@@ -4,7 +4,7 @@ import multer from "multer";
 import path from "path";
 import cors from "cors";
 import mongoose from "mongoose";
- 
+import dotenv from "dotenv";
 
 const app=express();
 const port=4000;
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 //Database connection with mongodb
-import dotenv from "dotenv";
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI, {
